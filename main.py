@@ -16,7 +16,7 @@ from utils.signals.algorithm.logic import OrderSet
 import buttons
 import commands
 
-__version__ = "1.5b"
+__version__ = "1.0"
 
 SIGNALS = OrderSet(None, None, None)
 
@@ -34,28 +34,31 @@ async def on_startup(dp: Dispatcher):
     dp.info = await bot.get_me()
     dp.startup_time = datetime.now()
 
-    list_bot_msg = await dp.bot.forward_message(chat_id=1104748610, from_chat_id=-1001574337755, message_id=19)
-    await list_bot_msg.delete()
-    list_bot_msg = list_bot_msg.text.split("• ")
-    c = 0
-    for i in list_bot_msg:
-        list_bot_msg[c] = list_bot_msg[c].strip()
-        if i.startswith(dp.info.mention):
-            list_bot_msg[c] = f"{dp.info.mention}\n  статус: 🟢\n  включен: {dp.startup_time.strftime('%H:%M %d.%m.%Y')}"
-        c += 1
-    await dp.bot.edit_message_text("\n• ".join(list_bot_msg), chat_id=-1001574337755, message_id=19)
+    # бот изменяет свое состояние в списке ботов
+    # list_bot_msg = await dp.bot.forward_message(chat_id=1104748610, from_chat_id=-1001574337755, message_id=19)
+    # await list_bot_msg.delete()
+    # list_bot_msg = list_bot_msg.text.split("• ")
+    # c = 0
+    # for i in list_bot_msg:
+    #     list_bot_msg[c] = list_bot_msg[c].strip()
+    #     if i.startswith(dp.info.mention):
+    #         list_bot_msg[c] = f"{dp.info.mention}\n  статус: 🟢\n  включен: {dp.startup_time.strftime('%H:%M %d.%m.%Y')}"
+    #     c += 1
+    # await dp.bot.edit_message_text("\n• ".join(list_bot_msg), chat_id=-1001574337755, message_id=19)
 
 async def on_shutdown(dp):
-    list_bot_msg = await dp.bot.forward_message(chat_id=1104748610, from_chat_id=-1001574337755, message_id=19)
-    await list_bot_msg.delete()
-    list_bot_msg = list_bot_msg.text.split("• ")
-    c = 0
-    for i in list_bot_msg:
-        list_bot_msg[c] = list_bot_msg[c].strip()
-        if i.startswith(dp.info.mention):
-            list_bot_msg[c] = f"{dp.info.mention}\n  статус: ⭕\n  выключен: {datetime.now().strftime('%H:%M %d.%m.%Y')}\n  время работы:{time_generator(datetime.now(), dp.startup_time)}"
-        c += 1
-    await dp.bot.edit_message_text("\n• ".join(list_bot_msg), chat_id=-1001574337755, message_id=19)
+    ...
+    # бот изменяет свое состояние в списке ботов
+    # list_bot_msg = await dp.bot.forward_message(chat_id=1104748610, from_chat_id=-1001574337755, message_id=19)
+    # await list_bot_msg.delete()
+    # list_bot_msg = list_bot_msg.text.split("• ")
+    # c = 0
+    # for i in list_bot_msg:
+    #     list_bot_msg[c] = list_bot_msg[c].strip()
+    #     if i.startswith(dp.info.mention):
+    #         list_bot_msg[c] = f"{dp.info.mention}\n  статус: ⭕\n  выключен: {datetime.now().strftime('%H:%M %d.%m.%Y')}\n  время работы:{time_generator(datetime.now(), dp.startup_time)}"
+    #     c += 1
+    # await dp.bot.edit_message_text("\n• ".join(list_bot_msg), chat_id=-1001574337755, message_id=19)
 
 async def checksub():
     while True:
@@ -80,28 +83,19 @@ async def extand_sub_(call: types.CallbackQuery):
     price = settings.buysub_price if user.subscribe_count > 25 else settings.first_buysub_price
     await call.message.answer(settings.buysub_msg.format(price=price, walletTRC20=settings.walletTRC20, walletBEP20=settings.walletBEP20), reply_markup=await buttons.start.buy(user_id, price, "sub"))
 
-@dp.message_handler(commands=["sub"])
-async def get_sub(msg: types.Message):
-    user = await db.check(msg)
-    if user.subscribe > datetime.now():
-        await db.edit.users(user.user_id, subscribe=f"'{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}'", access_lvl=1)
-        await msg.reply("У вас отозвана подписка и уровень доступа админа")
-        await dp.bot.set_my_commands([BotCommand("start", "меню")], scope=BotCommandScopeChat(user.user_id))
-    else:
-        await db.edit.users(user.user_id, subscribe=f"'{(datetime.now() + timedelta(days=30.5)).strftime('%Y-%m-%d %H:%M:%S')}'", access_lvl=2)
-        await msg.reply("Вам выдана подписка и уровень доступа админа")
-        await dp.bot.set_my_commands([BotCommand("start", "меню"), BotCommand("admins", "список админ команд")], scope=BotCommandScopeChat(user.user_id))
-
-
-#async def getsignals():
-#    global SIGNALS
-#
-#    while True:
-#        SIGNALS = await get_orders()
-#        logging.info("Signals updated")
-#        await asyncio.sleep(60)
+# команда для тестов
+#@dp.message_handler(commands=["sub"])
+#async def get_sub(msg: types.Message):
+#    user = await db.check(msg)
+#    if user.subscribe > datetime.now():
+#        await db.edit.users(user.user_id, subscribe=f"'{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}'", access_lvl=1)
+#        await msg.reply("У вас отозвана подписка и уровень доступа админа")
+#        await dp.bot.set_my_commands([BotCommand("start", "меню")], scope=BotCommandScopeChat(user.user_id))
+#    else:
+#        await db.edit.users(user.user_id, subscribe=f"'{(datetime.now() + timedelta(days=30.5)).strftime('%Y-%m-%d %H:%M:%S')}'", access_lvl=2)
+#        await msg.reply("Вам выдана подписка и уровень доступа админа")
+#        await dp.bot.set_my_commands([BotCommand("start", "меню"), BotCommand("admins", "список админ команд")], scope=BotCommandScopeChat(user.user_id))
 
 if __name__ == '__main__':
     dp.loop.create_task(checksub())
-#    dp.loop.create_task(getsignals())
     executor.start_polling(dp, skip_updates=True, on_startup=on_startup, on_shutdown=on_shutdown)
