@@ -1,0 +1,28 @@
+{
+    "https://bitzlato.com": {
+        "cookies": {
+            "_gid": "GA1.2.485402388.1664736783",
+            "_ga": "GA1.2.1375849835.1664736781",
+            "_ga_LJMRCX202H": "GS1.1.1664736782.1.0.1664736782.60.0.0",
+            "_ga_SGZR2Q1P2G": "GS1.1.1664736780.1.0.1664736780.0.0.0",
+            "_spinacms_session": "a5Whwfrg01xJ%2B61ic%2ByiT%2FI6nfyB4EjuCRFpJy1UCrDTWmsnlkq9wcz4%2BMGWuTxOQb9ydxi1x8JRS%2BPrA77H1q7KT%2FWVlW%2Bh1tQ7MKLPnRZwDGZgOq9RYdryd6iwGZlxNrGQ81poM%2B%2FNnGCKIemb3X7M7vPbWP%2BqSdfmetFkuZZz4BKjOcX%2FB3ipeWi%2BH00nHWXs5z6c3pwjo2JBwuR9I35ej02M%2FsS0cT08NN%2FipRhIe2nr1y%2BFiTf44fsi8NJFiUNG1v0bqwU85cIYdOKExh3gfAaYLStMUg%3D%3D--kfRnDzmxyHo49LA%2B--tnk8UNw%2F%2Fe4NFH%2BkO9EwaA%3D%3D",
+            "_gat_gtag_UA_120011529_7": "1",
+            "cf_clearance": "w.9ON2qWnZL_JllaGI2eydRgxyEtr3BFhCaElCQAqik-1664736777-0-150"
+        },
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36"
+    },
+    "https://bitpapa.com": {
+        "cookies": {
+            "_ga": "GA1.1.546713850.1665434033",
+            "_ga_CZ2XS1P0VK": "GS1.1.1665434034.1.0.1665434034.60.0.0",
+            "adspire_uid": "AS.1690946566.1665434031",
+            "_gat_UA-139713026-1": "1",
+            "_ym_d": "1665434033",
+            "_gid": "GA1.2.2067409010.1665434033",
+            "_ym_isad": "2",
+            "_ym_uid": "1665434033673453685",
+            "cf_clearance": "TtBPtuGDK1fvWIh9W2w4H5tsRgjCRqRNVEQGf0ZCq5s-1665434028-0-150"
+        },
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36"
+    }
+}

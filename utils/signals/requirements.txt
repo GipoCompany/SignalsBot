@@ -1,0 +1,8 @@
+websocket==0.2.1
+websocket-client==1.4.1
+lxml==4.9.1
+bs4==0.0.1
+aiohttp
+webdriver-manager
+selenium
+undetected-chromedriver

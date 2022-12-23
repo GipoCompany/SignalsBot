@@ -1,0 +1,14 @@
+{
+    "https://bitpapa.com": {
+        "cookie": {
+            "cf_clearance": "iBksM7kqJhN0vVV1KfZLzx8Amiw66sBsvCebt4vcXAU-1664223299-0-150"
+        },
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"
+    },
+    "https://bitzlato.com": {
+        "cookie": {
+            "cf_clearance": "b_qEIlfBnytSLfb8sAugJB3zstNF6CGLH9bFmdfk1Q4-1664195985-0-150"
+        },
+        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"
+    }
+}
